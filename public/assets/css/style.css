@@ -8,9 +8,15 @@ main{
     margin-top: 30px;
 }
 
+.body-custom{
+    margin-top: 80px;
+
+}
+/*
+    ---------------- NAVBAR
+ */
 .item-custom{
-    color: #ffa082 !important;
-    gap: 50px;
+    color: black !important;
 }
 
 .navbar-custom{
@@ -30,7 +36,33 @@ main{
     color: #58efc0 !important;
 }
 
+/*
+    --------------- END NAVBAR
+ */
 
+
+/*
+   ----------------- CARD PRODUCTS
+ */
+.product-item{
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.product-item span{
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/*
+    ------------ FOOTER
+ */
 .footer-custom{
     text-align: center;
     position: fixed;
