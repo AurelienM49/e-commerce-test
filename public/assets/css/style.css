@@ -8,25 +8,28 @@ main{
     margin-top: 30px;
 }
 
+.item-custom{
+    color: #ffa082 !important;
+    gap: 50px;
+}
+
 .navbar-custom{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding-top: 22px;
+    padding-bottom: 20px;
     transition: 0.2s;
 }
 
-.navbar-brand{
+.navbar-collapse{
+    justify-content: center;
+}
+
+.title-nav{
     font-family: 'Dela Gothic One', cursive;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.8em;
+    color: #58efc0 !important;
 }
 
-
-.nav-item-custom a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.left-item-nav{
-    margin-right: 20px;
-}
 
 .footer-custom{
     text-align: center;
