@@ -32,8 +32,8 @@ main{
 
 .title-nav{
     font-family: 'Dela Gothic One', cursive;
-    letter-spacing: 0.8em;
-    color: #58efc0 !important;
+    letter-spacing: 0.5em;
+    color: #01e37f !important;
 }
 
 /*
@@ -45,9 +45,18 @@ main{
    ----------------- CARD PRODUCTS
  */
 .product-item{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     text-transform: uppercase;
     font-size: 13px;
     margin-bottom: 15px;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+.product-item:hover{
+    transform: scale(1.02);
+}
+.product-info{
+    padding: 20px 20px;
 }
 
 .product-item span{
@@ -56,7 +65,10 @@ main{
     margin-bottom: 10px;
 }
 
-
+.img-fluid{
+    margin-bottom: 10px;
+    border-top-left-radius: 20px 20px;
+}
 
 
 
