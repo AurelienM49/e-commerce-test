@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EASY - {{ product.name }}{% endblock %}
+
+{% block body %}
+        <div class="card">
+            <div class="card__title">
+                <div class="icon">
+                    <a href="{{ path('products') }}"><i class="fa fa-arrow-left"></i></a>
+                </div>
+                <h3>{{ product.category }}</h3>
+            </div>
+            <div class="card__body">
+                <div class="half">
+                    <div class="featured_text">
+                        <h1>{{ product.name }}</h1>
+                        <p class="sub">{{ product.subtitle }}</p>
+                        <p class="price">{{ (product.price / 100) |number_format(2, ',', '.') }} €</p>
+                    </div>
+                    <div class="image">
+                        <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" alt="{{ product.subtitle }}">
+                    </div>
+                </div>
+                <div class="half">
+                    <div class="description">
+                        <p>{{ product.description }}</p>
+                    </div>
+                    <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+                    <div class="reviews">
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <span>(64 reviews)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
