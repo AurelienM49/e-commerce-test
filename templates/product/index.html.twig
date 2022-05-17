@@ -1,23 +1,33 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}EASY - Nos produits{% endblock %}
-
-{% block body %}
-    <h1>Nos produits</h1>
+{% extends 'base.html.twig' %} {% block title %}EASY - Nos produits{% endblock
+%} {% block body %}
+<div class="row">
+  <div class="col-md-3">
+    <h1>Filtrer</h1>
+  </div>
+  <div class="col-md-9">
+    <h1 class="title-produits">Nos produits</h1>
     <div class="row">
-        {% for product in products %}
-            <div class="col-md-4 card-container">
-                <a href="{{ path('product_details', {'slug' : product.slug}) }}">
-                    <div class="product-item">
-                        <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
-                        <div class="product-info">
-                            <h5>{{ product.name }}</h5>
-                            <span>{{ product.subtitle }}</span>
-                            <span class="product-price"> {{ (product.price / 100) |number_format(2, ',', '.') }} €</span>
-                        </div>
-                    </div>
-                </a>
+      {% for product in products %}
+      <div class="col-md-4 card-container">
+        <a href="{{ path('product_details', { slug: product.slug }) }}">
+          <div class="product-item">
+            <img
+              src="/uploads/{{ product.illustration }}"
+              alt="{{ product.name }}"
+              class="img-fluid"
+            />
+            <div class="product-info">
+              <h5>{{ product.name }}</h5>
+              <span>{{ product.subtitle }}</span>
+              <span class="product-price">
+                {{ (product.price / 100) |number_format(2, ',', '.') }} €</span
+              >
             </div>
-        {% endfor %}
+          </div>
+        </a>
+      </div>
+      {% endfor %}
     </div>
+  </div>
+</div>
 {% endblock %}
