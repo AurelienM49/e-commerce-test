@@ -1,1 +1,1 @@
-# e-commerce-test
+# easy-commerce
