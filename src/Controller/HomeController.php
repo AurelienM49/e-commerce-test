@@ -11,8 +11,9 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    public function index(SessionInterface $session): Response
     {
+
         return $this->render('home/index.html.twig');
     }
 }
