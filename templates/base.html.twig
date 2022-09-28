@@ -105,22 +105,24 @@
 											<button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 										</div>
 
-										<div class="offcanvas-body">
+										<div
+											class="offcanvas-body">
 											<!-- Menu-->
 											<ul class="navbar-nav">
 												<li class="nav-item dropdown">
 													<a class="nav-link dropdown-toggle" href="#">Nouveautés</a>
 												</li>
 												<li class="nav-item dropdown">
-													<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Tout les produits</a>
+													<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Produits</a>
 													<div class="dropdown-menu">
 														<div class="dropdown-column">
-															<a class="dropdown-item" href="">Vestes</a>
-															<a class="dropdown-item" href="">T-shirt</a>
-															<a class="dropdown-item" href="">Sweat</a>
-															<a class="dropdown-item" href="">Chemises</a>
-															<a class="dropdown-item" href="">Pantalon / Short</a>
-															<a class="dropdown-item" href="">Accessoires</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 'all' }) }}">Tout les prouits</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 'vestes' }) }}">Vestes</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 't-shirts' }) }}">T-shirt</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 'sweat' }) }}">Sweat</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 'chemise' }) }}">Chemises</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 'pantalon-Short' }) }}">Pantalon / Short</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 'accesoires' }) }}">Accessoires</a>
 														</div>
 													</div>
 												</li>
@@ -128,6 +130,7 @@
 													<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Collections</a>
 													<div class="dropdown-menu">
 														<div class="dropdown-column">
+															<a class="dropdown-item" href="product-four-image.html" style="color:#0f8fac;">Liberation</a>
 															<a class="dropdown-item" href="product-four-image.html">Tuesday morning</a>
 															<a class="dropdown-item" href="product-sticky.html">Under arrest</a>
 															<a class="dropdown-item" href="product-video-img.html">Best sellers</a>
@@ -153,7 +156,8 @@
 					<!-- Navigation End -->
 
 					<!-- Menu Right Start  -->
-					<div class="menu-right">
+					<div
+						class="menu-right">
 
 
 						<!-- Icon Menu Start -->
@@ -190,27 +194,6 @@
 									</ul>
 								</div>
 							</li>
-							<!--<div class="content"><li>
-								<div class="dropdown whislist-dropdown">
-									<a href="javascript:void(0)">
-										<i data-feather="heart"></i>
-										<span class="notification-label">0</span>
-									</a>
-									<div class="onhover-show-div">
-										<a href="wishlist.html">
-											<img src="../assets/icons/svg/box.svg" class="img-fluid" alt="box"/>
-										</a>
-										
-											<a href="wishlist.html">
-												<h6>Your wishlist empty !!</h6>
-												<p>explore more and shortlist items.</p>
-											</a>
-										</div>
-									</div>
-								</div>
-							</li>
-							-->
-							<!-- Cart Menu Start -->
 							<li>
 								<div class="dropdown shopingbag">
 									<a href="javascript:void(0)" class="cart-button">
@@ -229,7 +212,8 @@
 												</div>
 											</div>
 
-											<div class="card-wrap custom-scroll">
+											<div
+												class="card-wrap custom-scroll">
 												<!-- Cart Item Start -->
 												<div class="cart-card media">
 													<a href="product.html">
@@ -271,173 +255,150 @@
 			</div>
 		</header>
 
-{% block body %}{% endblock %}
 
-{% block footer %}
-<!-- Document Footer Start -->
-    <footer class="footer-document ratio_asos mb-xxl">
-      <div class="bg-footer-l">
-        <img src="../assets/images/fashion/banner/bg-footer-l.png" alt="banner" />
-      </div>
-      <div class="bg-footer-r">
-        <img src="../assets/images/fashion/banner/bg-footer-r.png" alt="banner" />
-      </div>
-      <div>
-        <div class="container-lg">
-          <div class="main-footer">
-            <div class="row gy-3 gy-md-4 gy-xl-0">
-              <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="content-box">
-                  <img class="logo" src="../assets/images/logos/logo-w.png" alt="logo-white" />
-                  <ul>
-                    <li><i data-feather="map-pin"></i> <span> Zone Industrielle des Bocages, <br>34895, Les Meuriniers </span></li>
-                    <li>
-                      <i data-feather="phone"></i><a class="nav" href="tel:185659635"><span> + 612548475 </span></a>
-                    </li>
-                    <li>
-                      <i data-feather="mail"></i><a class="nav" href="mailto:fashion098@gmail.com"><span> contact@easy.com </span></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+		{% block body %}{% endblock %}
+		{% block footer %}
+			<!-- Document Footer Start -->
+			<footer class="footer-document ratio_asos mb-xxl">
+				<div class="bg-footer-l">
+					<img src="../assets/images/fashion/banner/bg-footer-l.png" alt="banner"/>
+				</div>
+				<div class="bg-footer-r">
+					<img src="../assets/images/fashion/banner/bg-footer-r.png" alt="banner"/>
+				</div>
+				<div>
+					<div class="container-lg">
+						<div class="main-footer">
+							<div class="row gy-3 gy-md-4 gy-xl-0">
+								<div class="col-xl-3 col-lg-4 col-md-6">
+									<div class="content-box">
+										<img class="logo" src="../assets/images/logos/logo-w.png" alt="logo-white"/>
+										<ul>
+											<li>
+												<i data-feather="map-pin"></i>
+												<span>
+													Zone Industrielle des Bocages,
+													<br>34895, Les Meuriniers
+												</span>
+											</li>
+											<li>
+												<i data-feather="phone"></i>
+												<a class="nav" href="tel:185659635">
+													<span>
+														+ 612548475
+													</span>
+												</a>
+											</li>
+											<li>
+												<i data-feather="mail"></i>
+												<a class="nav" href="mailto:fashion098@gmail.com">
+													<span>
+														contact@easy.com
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
 
-              <div class="nav-footer col-lg-2 col-md-4 order-md-3 order-lg-2">
-                <div class="nav content-box d-md-block">
-                  <h5 class="heading-footer">Produits</h5>
-                  <ul>
-                    <li><a class="nav" href="shop-left-sidebar.html">Vestes</a></li>
-                    <li><a class="nav" href="shop-left-sidebar.html">T-shirts</a></li>
-                    <li><a class="nav" href="shop-left-sidebar.html">Sweat</a></li>
-                    <li><a class="nav" href="shop-left-sidebar.html">Chemises</a></li>
-                    <li><a class="nav" href="shop-left-sidebar.html">Pantalon & Short </a></li>
-                    <li><a class="nav" href="shop-left-sidebar.html">Accesoires</a></li>
-                  </ul>
-                </div>
-              </div>
+								<div class="nav-footer col-lg-2 col-md-4 order-md-3 order-lg-2">
+									<div class="nav content-box d-md-block">
+										<h5 class="heading-footer">Produits</h5>
+										<ul>
+											<li><a class="nav" href="shop-left-sidebar.html">Vestes</a></li>
+											<li><a class="nav" href="shop-left-sidebar.html">T-shirts</a></li>
+											<li><a class="nav" href="shop-left-sidebar.html">Sweat</a></li>
+											<li><a class="nav" href="shop-left-sidebar.html">Chemises</a></li>
+											<li><a class="nav" href="shop-left-sidebar.html">Pantalon & Short</a></li>
+											<li><a class="nav" href="shop-left-sidebar.html">Accesoires</a></li>
+										</ul>
+									</div>
+								</div>
 
-              <div class="nav-footer col-xl-2 col-lg-3 col-md-4 order-md-4 order-lg-3">
-                <div class="nav d-md-block content-box">
-                  <h5 class="heading-footer">Information</h5>
-                  <ul>
-                    <li><a class="nav" href="index.html">Home </a></li>
-                    <li><a class="nav" href="shop-left-sidebar.html">Produits</a></li>
-                    <li><a class="nav" href="about-us.html">A propos</a></li>
-                    <li><a class="nav" href="contact-us.html">Contact</a></li>
-                  </ul>
-                </div>
-              </div>
+								<div class="nav-footer col-xl-2 col-lg-3 col-md-4 order-md-4 order-lg-3">
+									<div class="nav d-md-block content-box">
+										<h5 class="heading-footer">Information</h5>
+										<ul>
+											<li><a class="nav" href="index.html">Home</a></li>
+											<li><a class="nav" href="shop-left-sidebar.html">Produits</a></li>
+											<li><a class="nav" href="about-us.html">A propos</a></li>
+											<li><a class="nav" href="contact-us.html">Contact</a></li>
+										</ul>
+									</div>
+								</div>
 
-              <div class="nav-footer col-xl-2 col-lg-3 col-md-4 order-md-5 order-lg-4">
-                <div class="nav d-md-block content-box">
-                  <h5 class="heading-footer">Get Help</h5>
-                  <ul>
-                    <li><a class="nav" href="user-dashboard.html">Votre commande</a></li>
-                    <li><a class="nav" href="user-dashboard.html">Votre compte</a></li>
-                    <li><a class="nav" href="user-dashboard.html">Suivre un colis</a></li>
-                  </ul>
-                </div>
-              </div>
+								<div class="nav-footer col-xl-2 col-lg-3 col-md-4 order-md-5 order-lg-4">
+									<div class="nav d-md-block content-box">
+										<h5 class="heading-footer">Get Help</h5>
+										<ul>
+											<li><a class="nav" href="user-dashboard.html">Votre commande</a></li>
+											<li><a class="nav" href="user-dashboard.html">Votre compte</a></li>
+											<li><a class="nav" href="user-dashboard.html">Suivre un colis</a></li>
+										</ul>
+									</div>
+								</div>
 
-              <div class="col-xl-3 col-md-6 col-lg-4 order-md-2 order-lg-5">
-                <div class="content-box">
-                  <h5 class="heading-footer">Suivez-nous</h5>
-                  <div class="follow-wrap">
-                    <ul>
-                      <li>
-                        <a href="https://www.facebook.com/"> <img src="../assets/icons/svg/social/fb.svg" alt="fb" /> </a>
-                      </li>
-                      <li>
-                        <a href="https://www.instagram.com/accounts/login/?source=auth_switcher"> <img src="../assets/icons/svg/social/inta.svg" alt="fb" /> </a>
-                      </li>
-                      <li>
-                        <a href="https://twitter.com/i/flow/login"> <img src="../assets/icons/svg/social/tw.svg" alt="fb" /> </a>
-                      </li>
-                      <li>
-                        <a href="https://in.pinterest.com/"> <img src="../assets/icons/svg/social/pint.svg" alt="fb" /> </a>
-                      </li>
-                    </ul>
-                  </div>
+								<div class="col-xl-3 col-md-6 col-lg-4 order-md-2 order-lg-5">
+									<div class="content-box">
+										<h5 class="heading-footer">Suivez-nous</h5>
+										<div class="follow-wrap">
+											<ul>
+												<li><a href="https://www.facebook.com/"><img src="../assets/icons/svg/social/fb.svg" alt="fb"/></a></li>
+												<li><a href="https://www.instagram.com/accounts/login/?source=auth_switcher"><img src="../assets/icons/svg/social/inta.svg" alt="fb"/></a></li>
+												<li><a href="https://twitter.com/i/flow/login"><img src="../assets/icons/svg/social/tw.svg" alt="fb"/></a></li>
+												<li><a href="https://in.pinterest.com/"><img src="../assets/icons/svg/social/pint.svg" alt="fb"/></a></li>
+											</ul>
+										</div>
 
-                  <div class="subscribe-box">
-                    <h5>Abonnez-vous à la newsletter</h5>
-                    <p>Recevez nos dernières actualités sur nos produits ainsi que les prochaines promotions</p>
-                  </div>
+										<div class="subscribe-box">
+											<h5>Abonnez-vous à la newsletter</h5>
+											<p>Recevez nos dernières actualités sur nos produits ainsi que les prochaines promotions</p>
+										</div>
 
-                  <form action="javascript:void(0)" class="footer-form">
-                    <input required type="email" class="form-control" placeholder="Votre adresse mail" />
-                    <button type="submit" class="btn-solid">Envoyez <i class="arrow"></i></button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+										<form action="javascript:void(0)" class="footer-form">
+											<input required type="email" class="form-control" placeholder="Votre adresse mail"/>
+											<button type="submit" class="btn-solid">Envoyez
+												<i class="arrow"></i>
+											</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
 
-          <div class="sub-footer">
-            <div class="row gy-3">
-              <div class="col-md-6">
-                <ul>
-                  <li>
-                    <a href="javascript:void(0)"> <img src="../assets/icons/png/1.png" class="img-fluid blur-up lazyload" alt="payment icon" /></a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"> <img src="../assets/icons/png/2.png" class="img-fluid blur-up lazyload" alt="payment icon" /></a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"> <img src="../assets/icons/png/3.png" class="img-fluid blur-up lazyload" alt="payment icon" /></a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"> <img src="../assets/icons/png/4.png" class="img-fluid blur-up lazyload" alt="payment icon" /></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <p class="mb-0">© 2022, conceived by Aurélien MUSET</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Document Footer End -->
+						<div class="sub-footer">
+							<div class="row gy-3">
+								<div class="col-md-6">
+									<ul>
+										<li><a href="javascript:void(0)"><img src="../assets/icons/png/1.png" class="img-fluid blur-up lazyload" alt="payment icon"/></a></li>
+										<li><a href="javascript:void(0)"><img src="../assets/icons/png/2.png" class="img-fluid blur-up lazyload" alt="payment icon"/></a></li>
+										<li><a href="javascript:void(0)"><img src="../assets/icons/png/3.png" class="img-fluid blur-up lazyload" alt="payment icon"/></a></li>
+										<li><a href="javascript:void(0)"><img src="../assets/icons/png/4.png" class="img-fluid blur-up lazyload" alt="payment icon"/></a></li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<p class="mb-0">© 2022, conceived by Aurélien MUSET</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- Document Footer End -->
 
-    <!-- Mobile Menu Footer Start -->
-    <footer class="mobile-menu-footer d-sm-none">
-      <ul>
-        <li>
-          <a href="index.html" class="active">
-            <i data-feather="home"></i>
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="search.html" class="search-link">
-            <i data-feather="search"></i>
-            <span>Search</span>
-          </a>
-        </li>
-        <li>
-          <a href="cart.html">
-            <i data-feather="shopping-bag"></i>
-            <span>Cart</span>
-          </a>
-        </li>
-        <li>
-          <a href="wishlist.html">
-            <i data-feather="heart"></i>
-            <span>Wishlist</span>
-          </a>
-        </li>
-        <li>
-          <a href="user-dashboard.html">
-            <i data-feather="user"></i>
-            <span>Account</span>
-          </a>
-        </li>
-      </ul>
-    </footer>
-    <!-- Mobile Menu Footer End -->
+			<!-- Mobile Menu Footer Start -->
+			<footer class="mobile-menu-footer d-sm-none">
+				<ul>
+					<li><a href="index.html" class="active"><i data-feather="home"></i><span>Home</span></a></li>
+					<li><a href="search.html" class="search-link"><i data-feather="search"></i><span>Search</span></a></li>
+					<li><a href="cart.html"><i data-feather="shopping-bag"></i><span>Cart</span></a></li>
+					<li><a href="wishlist.html"><i data-feather="heart"></i><span>Wishlist</span></a></li>
+					<li><a href="user-dashboard.html"><i data-feather="user"></i><span>Account</span></a></li>
+				</ul>
+			</footer>
+			<!-- Mobile Menu Footer End -->
 
-{% endblock %}
+		{% endblock %}
 		<script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 
 		<!-- Feather Icon -->
@@ -464,3 +425,4 @@
 		<script src="../assets/js/script.js"></script>
 	</body>
 </html>
+

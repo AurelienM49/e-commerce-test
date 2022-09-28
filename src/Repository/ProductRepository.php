@@ -71,4 +71,23 @@ class ProductRepository extends ServiceEntityRepository
 
         return $query->getQuery()->getResult();
     }
+     /**
+     * Requête qui permet de récupérer les produits fonctions d'une catégorie
+     * @return Product[]
+     */
+
+    public function findByCategorie($slug)
+    {
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('c', 'p')
+            ->join('p.category', 'c');
+
+        if (!empty($cat)) {
+            $query = $query
+                ->andWhere('c.slug IN (:slug)')
+                ->setParameter('slug', $slug);
+        }
+        return $query->getQuery()->getResult();
+    }
 }

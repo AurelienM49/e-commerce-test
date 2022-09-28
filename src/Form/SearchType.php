@@ -22,7 +22,7 @@ class SearchType extends AbstractType
                 'required' => false,
                 'attr' =>[
                     'placeholder' => 'Votre recherche...',
-                    'class' => 'form-control-sm'
+                    'class' => 'form-control-sm custom-search'
                 ]
             ])
             ->add('categories', EntityType::class, [
