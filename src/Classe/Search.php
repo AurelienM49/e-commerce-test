@@ -16,4 +16,15 @@ class Search
 	 * @var Category[]
 	 */
 	public $categories = [];
+	
+
+	/**
+	 * @var float
+	 */
+	public $priceMin;
+
+		/**
+	 * @var float
+	 */
+	public $priceMax;
 }

@@ -25,7 +25,7 @@ class ProductController extends AbstractController
 
 
     /**
-     * @Route("/nos-produits/{cat}", name="products")
+     * @Route("/produits/{cat}", name="products")
      */
     public function index(Request $request, $cat): Response
     {
@@ -39,7 +39,7 @@ class ProductController extends AbstractController
             $products = $this->em->getRepository(Product::class)->findWithSearch($search);
         } else if ($cat == 'all') {
             $products = $this->em->getRepository(Product::class)->findAll();
-        }else{
+        } else {
             $products = $this->em->getRepository(Product::class)->findByCategorie($cat);
         }
         return $this->render('product/index.html.twig', [

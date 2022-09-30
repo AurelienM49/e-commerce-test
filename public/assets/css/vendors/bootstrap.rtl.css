@@ -3030,8 +3030,8 @@ textarea.form-control-lg {
 
 .btn-info {
   color: #000;
-  background-color: #0dcaf0;
-  border-color: #0dcaf0;
+  background-color: var(--theme-color);
+  border-color: var(--theme-color);
 }
 .btn-info:hover {
   color: #000;

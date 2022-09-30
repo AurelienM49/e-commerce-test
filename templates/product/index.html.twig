@@ -2,12 +2,6 @@
 {% block title %}EASY - Nos produits
 {% endblock %}
 {% block body %}
-<style>
-  .custom-search {
-    width: 260px !important;
-    margin-top: 30px;
-  }
-</style>
 <div class="container-fluid" style="padding: 70px;">
   <div class="row">
     <div class="col-md-3">
@@ -15,23 +9,39 @@
       {{ form(form) }}
       </div>
       <div class="col-md-9">
-        <h1 class="title-produits" style="margin-bottom: 30px;">Nos produits</h1>
+        <h1 class="title-produits" style="margin-bottom: 5px;">Nos produits</h1>
         <div class="row">
           {% for product in products %}
-            <div class="col-md-4 card-container">
-              <a href="{{ path('product_details', { slug: product.slug }) }}">
-                <div class="product-item">
-                  <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid"/>
-                  <div class="product-info">
-                    <h5>{{ product.name }}</h5>
-                    <span>{{ product.subtitle }}</span>
-                    <span class="product-price">
-                      {{ (product.price / 100) |number_format(2, ',', '.') }}
-                      €</span>
+            <div class="col-md-3">
+              <div class="wsk-cp-product">
+                <div class="wsk-cp-img">
+                  <img src=" {{asset('uploads/' ~ product.illustration)| imagine_filter('rectangle')}}" alt="{{ product.name }}" alt="Product" class="img-responsive"/>
+                </div>
+                <div class="wsk-cp-text">
+                  <div class="category">
+                    <span>Add</span>
+                  </div>
+                  <div class="title-product">
+                    <h3>{{ product.name }}</h3>
+                  </div>
+                  <div class="description-prod">
+                    <p>{{ product.subtitle }}</p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="wcf-left">
+                      <span class="price">{{ (product.price / 100) |number_format(2, ',', '.') }} €</span>
+                    </div>
+                    <div class="wcf-right">
+                      <a href="#" class="buy-btn">
+                        <i data-feather="shopping-bag" class="img-shop-card" ></i></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
+
+        
           {% endfor %}
         </div>
       </div>

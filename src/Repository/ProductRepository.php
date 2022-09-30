@@ -85,7 +85,7 @@ class ProductRepository extends ServiceEntityRepository
 
         if (!empty($cat)) {
             $query = $query
-                ->andWhere('c.slug IN (:slug)')
+                ->andWhere('c.slug = (:slug)')
                 ->setParameter('slug', $slug);
         }
         return $query->getQuery()->getResult();

@@ -3,15 +3,38 @@
 {% block title %}EASY - Inscription {% endblock %}
 
 {% block body %}
-    <h1>Inscription</h1>
+<div class="container-fluid" style="padding-right: 200px;padding-left: 200px;padding-bottom:70px;padding-top:30px;">
+<style>
+input[type='checkbox']{
+    width: 15px !important;
+    height: 15px !important;
+}
+.container-register{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.firstname) }}
-        {{ form_row(registrationForm.lastname) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.password) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+</style>
+<div class="container-register">
+    <div class="row" style="width:100%;">
+        <div class="col-md-12">
+            <h1>Inscription</h1>
+            <hr>
 
-        <button type="submit" class="btn btn-primary">Register</button>
-    {{ form_end(registrationForm) }}
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.firstname) }}
+                {{ form_row(registrationForm.lastname) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.password) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+
+                <button type="submit" class="btn btn-primary" style="width:100%;background-color:var(--theme-color);">Register</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+</div>
+</div>
 {% endblock %}

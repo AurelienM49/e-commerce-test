@@ -56,6 +56,9 @@
 
 		<!-- Style Css -->
 		<link id="change-link" rel="stylesheet" type="text/css" href="../assets/css/style.css"/>
+				<link id="change-link" rel="stylesheet" type="text/css" href="../assets/css/card-product.css"/>
+
+		
 	</head>
 	<!-- Head End -->
 
@@ -95,7 +98,7 @@
 									<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu" aria-controls="primaryMenu">
 										<span class="navbar-toggler-icon"></span>
 									</button>
-									<a href="index.html" class="logo-link">
+									<a href="{{ path('home')}}" class="logo-link">
 										<img class="logo logo-dark" src="../assets/images/logos/logo.png" alt="logo"/>
 										<img class="logo logo-light" src="../assets/images/logos/logo-w.png" alt="logo"/>
 									</a>
@@ -118,11 +121,10 @@
 														<div class="dropdown-column">
 															<a class="dropdown-item" href="{{ path('products', {'cat' : 'all' }) }}">Tout les prouits</a>
 															<a class="dropdown-item" href="{{ path('products', {'cat' : 'vestes' }) }}">Vestes</a>
-															<a class="dropdown-item" href="{{ path('products', {'cat' : 't-shirts' }) }}">T-shirt</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 't-shirts' }) }}">T-shirts</a>
 															<a class="dropdown-item" href="{{ path('products', {'cat' : 'sweat' }) }}">Sweat</a>
 															<a class="dropdown-item" href="{{ path('products', {'cat' : 'chemise' }) }}">Chemises</a>
 															<a class="dropdown-item" href="{{ path('products', {'cat' : 'pantalon-Short' }) }}">Pantalon / Short</a>
-															<a class="dropdown-item" href="{{ path('products', {'cat' : 'accesoires' }) }}">Accessoires</a>
 														</div>
 													</div>
 												</li>
