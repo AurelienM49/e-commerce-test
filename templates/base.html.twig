@@ -122,13 +122,13 @@
 															<a class="dropdown-item" href="{{ path('products', {'cat' : 'all' }) }}">Tout les prouits</a>
 															<a class="dropdown-item" href="{{ path('products', {'cat' : 'vestes' }) }}">Vestes</a>
 															<a class="dropdown-item" href="{{ path('products', {'cat' : 't-shirts' }) }}">T-shirts</a>
-															<a class="dropdown-item" href="{{ path('products', {'cat' : 'sweat' }) }}">Sweat</a>
-															<a class="dropdown-item" href="{{ path('products', {'cat' : 'chemise' }) }}">Chemises</a>
-															<a class="dropdown-item" href="{{ path('products', {'cat' : 'pantalon-Short' }) }}">Pantalon / Short</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 'sweats' }) }}">Sweats</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 'chemises' }) }}">Chemises</a>
+															<a class="dropdown-item" href="{{ path('products', {'cat' : 'pantalons-shorts' }) }}">Pantalons / Shorts</a>
 														</div>
 													</div>
 												</li>
-												<li class="nav-item dropdown">
+												<!--<li class="nav-item dropdown">
 													<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Collections</a>
 													<div class="dropdown-menu">
 														<div class="dropdown-column">
@@ -141,7 +141,7 @@
 												</li>
 												<li class="nav-item dropdown">
 													<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Promotions</a>
-												</li>
+												</li>-->
 												<li class="nav-item dropdown">
 													<a class="nav-link dropdown-toggle" href="#">Contact</a>
 												</li>
@@ -186,6 +186,16 @@
 									<a href="javascript:void(0)">
 										<i data-feather="user"></i>
 									</a>
+									{% if app.user %}
+									<ul class="onhover-show-div">
+										<li>
+											<a href="{{path('account')}}">Mon compte</a>
+										</li>
+										<li>
+											<a href="{{path('logout')}}">Déconnexion</a>
+										</li>
+									</ul>
+									{% else %}
 									<ul class="onhover-show-div">
 										<li>
 											<a href="{{path('login')}}">Se connecter</a>
@@ -194,6 +204,7 @@
 											<a href="{{path('register')}}">S'inscrire</a>
 										</li>
 									</ul>
+									{% endif %}
 								</div>
 							</li>
 							<li>
@@ -207,7 +218,7 @@
 										<div class="onhover-show-div">
 											<div class="dropdown-header">
 												<div class="control">
-													<a href="cart.html">Panier</a>
+													<a href="{{path('cart')}}">Panier</a>
 													<button class="back-cart">
 														<i data-feather="arrow-right"></i>
 													</button>
@@ -240,7 +251,7 @@
 											</div>
 											<div class="dropdown-footer">
 												<div class="btn-group block-group">
-													<a href="cart.html" class="btn-solid">Voir le panier</a>
+													<a href="{{path('cart')}}" class="btn-solid">Voir le panier</a>
 													<a href="payment.html" class="btn-outline">Paiment</a>
 												</div>
 											</div>
@@ -307,12 +318,12 @@
 									<div class="nav content-box d-md-block">
 										<h5 class="heading-footer">Produits</h5>
 										<ul>
-											<li><a class="nav" href="shop-left-sidebar.html">Vestes</a></li>
-											<li><a class="nav" href="shop-left-sidebar.html">T-shirts</a></li>
-											<li><a class="nav" href="shop-left-sidebar.html">Sweat</a></li>
-											<li><a class="nav" href="shop-left-sidebar.html">Chemises</a></li>
-											<li><a class="nav" href="shop-left-sidebar.html">Pantalon & Short</a></li>
-											<li><a class="nav" href="shop-left-sidebar.html">Accesoires</a></li>
+											<li><a class="nav" href="{{ path('products', {'cat' : 'vestes' }) }}">Vestes</a></li>
+											<li><a class="nav" href="{{ path('products', {'cat' : 't-shirts' }) }}">T-shirts</a></li>
+											<li><a class="nav" href="{{ path('products', {'cat' : 'sweats' }) }}">Sweat</a></li>
+											<li><a class="nav" href="{{ path('products', {'cat' : 'chemises' }) }}">Chemises</a></li>
+											<li><a class="nav" href="{{ path('products', {'cat' : 'pantalons-shorts' }) }}">Pantalon & Short</a></li>
+											<li><a class="nav" href="{{ path('products', {'cat' : 'accessoires' }) }}">Accesoires</a></li>
 										</ul>
 									</div>
 								</div>
@@ -321,10 +332,10 @@
 									<div class="nav d-md-block content-box">
 										<h5 class="heading-footer">Information</h5>
 										<ul>
-											<li><a class="nav" href="index.html">Home</a></li>
-											<li><a class="nav" href="shop-left-sidebar.html">Produits</a></li>
-											<li><a class="nav" href="about-us.html">A propos</a></li>
-											<li><a class="nav" href="contact-us.html">Contact</a></li>
+											<li><a class="nav" href="{{ path('home') }}">Home</a></li>
+											<li><a class="nav" href="{{ path('products', {'cat' : 'all' }) }}">Produits</a></li>
+											<li><a class="nav" href="#">A propos</a></li>
+											<li><a class="nav" href="#">Contact</a></li>
 										</ul>
 									</div>
 								</div>
@@ -333,9 +344,9 @@
 									<div class="nav d-md-block content-box">
 										<h5 class="heading-footer">Get Help</h5>
 										<ul>
-											<li><a class="nav" href="user-dashboard.html">Votre commande</a></li>
-											<li><a class="nav" href="user-dashboard.html">Votre compte</a></li>
-											<li><a class="nav" href="user-dashboard.html">Suivre un colis</a></li>
+											<li><a class="nav" href="#">Votre commande</a></li>
+											<li><a class="nav" href="#">Votre compte</a></li>
+											<li><a class="nav" href="#">Suivre un colis</a></li>
 										</ul>
 									</div>
 								</div>

@@ -52,7 +52,7 @@ class RegistrationFormType extends AbstractType
                 'constraints' => [
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Le nom doit contenir au moins 2 caractères',
+                        'minMessage' => 'Le nom doit contenir au moins 6 caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 80,
                     ]),

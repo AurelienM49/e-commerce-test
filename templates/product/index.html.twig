@@ -2,50 +2,241 @@
 {% block title %}EASY - Nos produits
 {% endblock %}
 {% block body %}
-<div class="container-fluid" style="padding: 70px;">
-  <div class="row">
-    <div class="col-md-3">
-      <h1>Filtrer</h1>
-      {{ form(form) }}
-      </div>
-      <div class="col-md-9">
-        <h1 class="title-produits" style="margin-bottom: 5px;">Nos produits</h1>
-        <div class="row">
-          {% for product in products %}
-            <div class="col-md-3">
-              <div class="wsk-cp-product">
-                <div class="wsk-cp-img">
-                  <img src=" {{asset('uploads/' ~ product.illustration)| imagine_filter('rectangle')}}" alt="{{ product.name }}" alt="Product" class="img-responsive"/>
-                </div>
-                <div class="wsk-cp-text">
-                  <div class="category">
-                    <span>Add</span>
-                  </div>
-                  <div class="title-product">
-                    <h3>{{ product.name }}</h3>
-                  </div>
-                  <div class="description-prod">
-                    <p>{{ product.subtitle }}</p>
-                  </div>
-                  <div class="card-footer">
-                    <div class="wcf-left">
-                      <span class="price">{{ (product.price / 100) |number_format(2, ',', '.') }} €</span>
-                    </div>
-                    <div class="wcf-right">
-                      <a href="#" class="buy-btn">
-                        <i data-feather="shopping-bag" class="img-shop-card" ></i></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+	<!-- Main Start -->
+	<main
+		class="main">
+		<!-- Breadcrumb Start -->
+		<div class="breadcrumb-wrap">
+			<div class="banner">
+				<img class="bg-img bg-top" src="../assets/images/inner-page/banner-p.jpg" alt="banner"/>
 
-        
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-	{% endblock %}
+				<div class="container-lg">
+					<div class="breadcrumb-box">
+						<div class="heading-box">
+							<h1>Shop</h1>
+						</div>
+						<ol class="breadcrumb">
+							<li>
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">
+									<i data-feather="chevron-right"></i>
+								</a>
+							</li>
+							<li class="current">
+								<a href="shop-filter.html">Shop</a>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Breadcrumb End -->
+
+		<!-- Shop Section Start -->
+		<section class="shop-page">
+			<div class="container-lg">
+				<div class="row gy-4 g-lg-3 g-xxl-4">
+					<div class="col-4 col-xl-3 sidebar-controll sidebar-hidden">
+					{{form_start(form)}}
+						<div class="sidebar-inner sticky">
+							<div class="back-box d-flex">
+								<span>Back</span>
+								<span>
+									<i data-feather="x"></i>
+								</span>
+							</div>
+							<div class="search-box reverse">
+								{{form_label(form.string)}}
+								{{form_widget(form.string)}}
+							</div>
+
+							<div class="row gy-3 gx-0 g-lg-4">
+								<div class="col-12">
+									<div class="sidebar-box">
+										<div class="title-box4">
+											<h4 class="heading">Applied Filters
+												<span class="bg-theme-blue"></span>
+											</h4>
+										</div>
+										<ul class="tags">
+										{% for aFilter in applyFilter %}
+											<li>
+												<a href="javascript:void(0)">
+													{{aFilter}}												
+												</a>
+											</li>
+										{% endfor %}
+										</ul>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="sidebar-box">
+										<div class="title-box4">
+											<h4 class="heading">Filter
+												<span class="bg-theme-blue"></span>
+											</h4>
+										</div>
+										<div class="filtre-form">
+											{{form_row(form.categories)}}
+										</div>
+									</div>	
+								</div>
+								{{form_row(form.submit)}}
+							</div>
+						</div>
+						{{form_end(form)}}
+					</div>
+
+					<div class="col-12">
+						<div class="row gy-4 gy-lg-5 gx-0">
+							<div class="col-12 order-1 order-lg-2">
+								<div class="shop-product">
+									<div class="top-header-wrap">
+										<button class="filter-btn btn-solid btn-sm mb-line me-4">Filter
+											<i class="arrow"></i>
+										</button>
+
+										<!--<div class="grid-option-wrap">
+											<div class="select-options">
+												<div class="select-menu">
+													<div class="dropdown select-dropdown">
+														<button class="select-showval" id="sortProduct">
+															<span>24 Page Per View</span>
+															<i data-feather="chevron-down"></i>
+														</button>
+														<ul class="onhover-show-div select-vallist">
+															<li class="select-list">Alphabetical A-Z</li>
+															<li class="select-list">Alphabetical Z-A</li>
+															<li class="select-list">$ High To Low</li>
+															<li class="select-list">Date, Old To New</li>
+															<li class="select-list">Date, New To Old</li>
+														</ul>
+													</div>
+													<div class="dropdown select-dropdown small-dropdown">
+														<button class="select-showval" id="featureProduct">
+															<span>Select Feature</span>
+															<i data-feather="chevron-down"></i>
+														</button>
+														<ul class="onhover-show-div select-vallist">
+															<li class="select-list">Jeans</li>
+															<li class="select-list">T-shirt</li>
+															<li class="select-list">Shirt</li>
+															<li class="select-list">Jacket</li>
+															<li class="select-list">Hoodie</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<ul class="filter-option-grid d-none d-sm-flex">
+												<li class="nav-item d-none d-sm-flex">
+													<button class="nav-link" data-grid="2">
+														<svg>
+															<use xlink:href="../assets/icons/svg/grid/_sprite.svg#grid-2"></use>
+														</svg>
+													</button>
+												</li>
+												<li class="nav-item d-none d-sm-flex">
+													<button class="nav-link" data-grid="3">
+														<svg>
+															<use xlink:href="../assets/icons/svg/grid/_sprite.svg#grid-3"></use>
+														</svg>
+													</button>
+												</li>
+												<li class="nav-item d-none d-xl-flex">
+													<button class="nav-link active" data-grid="4">
+														<svg>
+															<use xlink:href="../assets/icons/svg/grid/_sprite.svg#grid-4"></use>
+														</svg>
+													</button>
+												</li>
+												<li class="nav-item d-none d-sm-flex">
+													<button class="nav-link" data-grid="list">
+														<svg>
+															<use xlink:href="../assets/icons/svg/grid/_sprite.svg#grid-list"></use>
+														</svg>
+													</button>
+												</li>
+											</ul>
+										</div>-->
+									</div>
+									<div class="product-tab-content">
+										<div class="view-option row g-3 g-xl-4 ratio_asos row-cols-2 row-cols-sm-3 row-cols-xl-4 grid-section">
+                        {% for product in products %}
+											<div>
+												<div class="product-card">
+													<div
+														class="img-box">
+														<!-- Thumbnail
+														<ul class="thumbnail-img">
+															<li class="active thumb"><img src="../assets/images/fashion/product/front/7.jpg" alt="thumbnail"/></li>
+															<li class="thumb"><img src="../assets/images/fashion/product/front/7-1.jpg" alt="thumbnail"/></li>
+															<li class="thumb"><img src="../assets/images/fashion/product/front/7-2.jpg" alt="thumbnail"/></li>
+															<li class="thumb"><img src="../assets/images/fashion/product/front/7-3.jpg" alt="thumbnail"/></li>
+														</ul>
+														 -->
+														<a href="{{ path('product_details', { 'slug' : product.slug } ) }}" class="primary-img"><img class="img-fluid bg-img" src="{{asset('uploads/' ~ product.illustration)}}" alt="product"/>
+														</a>
+
+														<!-- Rating 
+														<div class="rating">
+															<span>4.5
+																<i data-feather="star"></i>
+															</span>
+															<span>185</span>
+														</div>
+														-->
+														<!-- Option -->
+														<ul class="option-wrap">
+															<li>
+																<a href="javascript:void(0)" class="wishlist-btn">
+																	<i data-feather="heart"></i>
+																</a>
+															</li>
+															<li>
+																<a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#viewModal">
+																	<i data-feather="eye"></i>
+																</a>
+															</li>
+															<li>
+																<a href="javascript:void(0)" class="addtocart-btn">
+																	<i data-feather="shopping-bag"></i>
+																</a>
+															</li>
+														</ul>
+													</div>
+													<!-- PRODUCTS -->
+														<!-- Content Box -->
+														<div class="content-box">
+															<a href="product.html">
+																<p>{{ product.name }}</p>
+																<h5>{{ product.subtitle }}</h5>
+																<span>{{ (product.price / 100) |number_format(2, ',', '.') }}
+																</span>
+																<p class="details truncate-3">
+																	{{ product.description }}
+																</p>
+															</a>
+															<a href="javascript:void(0)" class="btn btn-solid btn-sm mb-line addtocart-btn">Add To Cart
+																<i class="arrow"></i>
+															</a>
+														</div>
+												</div>
+											</div>
+                      {% endfor %}
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Shop Section End -->
+	</main>
+	<!-- Main End -->
+{% endblock %}
 

@@ -192,10 +192,6 @@
       margin-bottom: 11px;
     }
   }
-.custom-search {
-  width: 340px !important;
-  margin-top: 30px;
-}
 .btn-info{
   background-color: var(--theme-color);
   color:white;

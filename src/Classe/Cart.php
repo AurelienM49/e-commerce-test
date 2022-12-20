@@ -25,6 +25,7 @@ class Cart
 
         $cart = $this->session->get('cart', []);
 
+        
 
         if (!empty($cart[$id])) {
             $cart[$id]++;
@@ -45,10 +46,22 @@ class Cart
     }
 
     /**
-     * Fonction pour récupérer le panier
+     * Fonction pour supprimer un item du panier
      */
     public function remove(Cart $cart)
     {
         return $this->session->remove('cart');
+    }
+
+    /**
+     * Fonction pour supprimer un item du panier
+     */
+    public function delete($id)
+    {
+        $cart = $this->session->get('cart', []);
+
+        unset($cart[$id]);
+
+        return $cart;
     }
 }

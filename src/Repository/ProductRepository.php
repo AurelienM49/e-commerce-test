@@ -76,18 +76,19 @@ class ProductRepository extends ServiceEntityRepository
      * @return Product[]
      */
 
-    public function findByCategorie($slug)
+    public function findByCategorie($categorie)
     {
         $query = $this
-            ->createQueryBuilder('p')
-            ->select('c', 'p')
-            ->join('p.category', 'c');
+        ->createQueryBuilder('p')
+        ->select('c', 'p')
+        ->join('p.category', 'c');
 
-        if (!empty($cat)) {
-            $query = $query
-                ->andWhere('c.slug = (:slug)')
-                ->setParameter('slug', $slug);
-        }
+    if (!empty($categorie)) {
+        $query = $query
+            ->andWhere('c.slug LIKE :categories')
+            ->setParameter('categories', "%{$categorie}%");
+    }
+
         return $query->getQuery()->getResult();
     }
 }
